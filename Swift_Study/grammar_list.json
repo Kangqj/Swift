@@ -23,6 +23,18 @@
             "detail":"转型，类型判断，消除二义性",
             "url":"https://www.cnblogs.com/dukework/p/6553714.html",
             "note":"1. as\n（1）从派生类转换为基类，向上转型（upcasts）\n（2）消除二义性，数值类型转换\n（3）switch 语句中进行模式匹配\n2. as!\n向下转型（Downcasting）时使用。由于是强制类型转换，如果转换失败会报 runtime 运行错误。\n3. as?\nas? 和 as! 操作符的转换规则完全一样。但 as? 如果转换不成功的时候便会返回一个 nil 对象。成功的话返回可选类型值。由于 as? 在转换失败的时候也不会出现错误，所以对于如果能确保100%会成功的转换则可使用 as!，否则使用 as?",
+        },
+        {
+            "title":"Call can throw报错处理",
+            "detail":"Call can throw, but it is not marked with 'try' and the error is not handled",
+            "url":"https://www.jianshu.com/p/591c69e5b6d1",
+            "note":"在调用一个函数时,如果发现该函数最后有一个throws,表示该函数可能会抛出异常,处理方式有三种 try try? try!\ntry 捕捉异常，并且进行处理\ntry？ 系统会自动处理异常, 返回一个可选类型(如果有异常则返回一个nil，如果没有异常则返回对应的值）\ntry! 告诉系统该函数不会有异常 直接返回值 ps：有异常则程序崩溃（慎用）",
+        },
+        {
+            "title":"Value of optional type报错处理",
+            "detail":"Value of optional type 'String?' must be unwrapped to a value of type 'String'",
+            "url":"https://www.jianshu.com/p/67f3e3ee6a32",
+            "note":"原因是变量可能为nil，下面又有用到该变量的地方。所以这种情况，需要用guard语句来判断变量是否为nil，为nil则reture",
         }
     ]
 }

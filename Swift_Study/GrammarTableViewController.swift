@@ -19,6 +19,22 @@ class GrammarTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        guard let filepath = Bundle.main.path(forResource: "grammar_list", ofType: "json") else {
+            return
+        }
+        
+        guard let contents = try? String(contentsOfFile: filepath) else {
+            return
+        }
+        
+        let dic = contents.toDictionary()
+//                let dic = stringValueDic(contents)
+        guard let arr = dic["data_list"] as? [[String:String]] else {
+            return
+        }
+        list.append(contentsOf: arr)
+
+        /*
         if let filepath = Bundle.main.path(forResource: "grammar_list", ofType: "json") {
             do {
                 let contents = try String(contentsOfFile: filepath)
@@ -34,7 +50,7 @@ class GrammarTableViewController: UITableViewController {
         } else {
             // 文件未找到
         }
-        
+        */
 //        let dict1 = ["title":"可选项Optional", "detail":"?，!可选项,判断nil，展开，可选链", "url":"https://zhuanlan.zhihu.com/p/462800711"]
 //        let dict2 = ["title":"测试可选项为nil的场景", "detail":"nil"]
 //        let dict3 = ["title":"guard的用法", "detail":"guard语句，if判断", "url":"https://www.jianshu.com/p/67f3e3ee6a32"]
