@@ -16,26 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lrN-5r-EFw">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T32-tl-5oj">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lrN-5r-EFw" secondAttribute="bottom" id="6GY-WB-KEu"/>
-                            <constraint firstItem="lrN-5r-EFw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="B9h-cc-JVn"/>
-                            <constraint firstItem="lrN-5r-EFw" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ww3-mj-jJ5"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lrN-5r-EFw" secondAttribute="trailing" id="oMy-RW-JVh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="T32-tl-5oj" secondAttribute="trailing" id="3zy-4C-bQP"/>
+                            <constraint firstItem="T32-tl-5oj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Qlq-1i-pmY"/>
+                            <constraint firstItem="T32-tl-5oj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ocY-vG-mF4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="T32-tl-5oj" secondAttribute="bottom" id="t28-SE-9w5"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mTextView" destination="lrN-5r-EFw" id="rWh-qb-GDo"/>
+                        <outlet property="mWebView" destination="T32-tl-5oj" id="emW-eI-MX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -44,9 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

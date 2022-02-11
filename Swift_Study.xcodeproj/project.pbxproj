@@ -10,6 +10,8 @@
 		2E67538427B5F73500FC5882 /* GrammarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67538327B5F73500FC5882 /* GrammarTableViewController.swift */; };
 		2E67538627B5F91100FC5882 /* GrammarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */; };
 		2E67538A27B5FA1D00FC5882 /* GrammarDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */; };
+		2E67538C27B63FF300FC5882 /* grammar_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E67538B27B63FF300FC5882 /* grammar_list.json */; };
+		2E67538E27B6432200FC5882 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67538D27B6432200FC5882 /* Extension.swift */; };
 		2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE427B4F60F009F7002 /* AppDelegate.swift */; };
 		2E7ACDE727B4F60F009F7002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE627B4F60F009F7002 /* SceneDelegate.swift */; };
 		2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE827B4F60F009F7002 /* ControlViewController.swift */; };
@@ -42,6 +44,8 @@
 		2E67538327B5F73500FC5882 /* GrammarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarTableViewController.swift; sourceTree = "<group>"; };
 		2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarDetailViewController.swift; sourceTree = "<group>"; };
 		2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GrammarDetailViewController.storyboard; sourceTree = "<group>"; };
+		2E67538B27B63FF300FC5882 /* grammar_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammar_list.json; sourceTree = "<group>"; };
+		2E67538D27B6432200FC5882 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2E7ACDE127B4F60F009F7002 /* Swift_Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Study.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7ACDE427B4F60F009F7002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E7ACDE627B4F60F009F7002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				2E7ACDE827B4F60F009F7002 /* ControlViewController.swift */,
 				2E67538327B5F73500FC5882 /* GrammarTableViewController.swift */,
 				2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */,
+				2E67538D27B6432200FC5882 /* Extension.swift */,
+				2E67538B27B63FF300FC5882 /* grammar_list.json */,
 				2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */,
 				2E7ACDEA27B4F60F009F7002 /* Main.storyboard */,
 				2E7ACDED27B4F611009F7002 /* Assets.xcassets */,
@@ -243,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E67538C27B63FF300FC5882 /* grammar_list.json in Resources */,
 				2E7ACDF127B4F611009F7002 /* LaunchScreen.storyboard in Resources */,
 				2E7ACDEE27B4F611009F7002 /* Assets.xcassets in Resources */,
 				2E67538A27B5FA1D00FC5882 /* GrammarDetailViewController.storyboard in Resources */,
@@ -273,6 +280,7 @@
 			files = (
 				2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */,
 				2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */,
+				2E67538E27B6432200FC5882 /* Extension.swift in Sources */,
 				2E7ACE1C27B520A5009F7002 /* MainTableViewController.swift in Sources */,
 				2E7ACDE727B4F60F009F7002 /* SceneDelegate.swift in Sources */,
 				2E67538427B5F73500FC5882 /* GrammarTableViewController.swift in Sources */,
