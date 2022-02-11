@@ -1,71 +1,58 @@
 //
-//  MainTableViewController.swift
+//  GrammarTableViewController.swift
 //  Swift_Study
 //
-//  Created by james on 2022/2/10.
+//  Created by james on 2022/2/11.
 //
 
 import UIKit
 
-class MainTableViewController: UITableViewController {
-    
-    var list = [[String:String]]();
+class GrammarTableViewController: UITableViewController {
+
+    var list = [[String:String]]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        let dict1 = ["title":"UI学习", "detial":"学习各种控件的使用"];
-        let dict2 = ["title":"Swift语法学习", "detial":"学习Swift语法的使用"];
+        let dict1 = ["title":"可选", "detail":"?，!"]
         list.append(dict1)
-        list.append(dict2)
     }
-    
-//    var list = ["UI学习","语法学习","item3","item4","item5","item6"]
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Identifier 是用来作为可重用的标志
-        let cellIdentifier = "cell"
-        // 查找是否有可重复的Cell
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        // 如果没有可重用的Cell就创建一个新的
-        if cell == nil {
-            //系统默认一个有四种样式 .default .subtitle .value1 .value2
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
-        }
-        
-        cell?.accessoryType = .disclosureIndicator;
-        let dic = list[indexPath.row];
-        cell?.textLabel?.text = dic["title"];
-        cell?.detailTextLabel?.text = dic["detial"];
-        
-        return cell!
-    }
-    
+
+    // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return list.count
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dic = list[indexPath.row];
-        switch indexPath.row {
-        case 0:
-            let vc = ControlViewController.instantiate();
-            vc.title = dic["title"];
-            self.navigationController?.pushViewController(vc, animated: true);
-        case 1:
-            let vc = GrammarTableViewController();
-            vc.title = dic["title"];
-            self.navigationController?.pushViewController(vc, animated: true);
-        default:
-            break
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellId = "cell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
         }
+        
+        cell?.accessoryType = .disclosureIndicator
+        let dic = list[indexPath.row]
+        cell?.textLabel?.text = dic["title"];
+        cell?.detailTextLabel?.text = dic["detail"];
+        
+        return cell!;
     }
     
-    // MARK: - Table view data source
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = GrammarDetailViewController.instantiate() else {
+            return
+        }
+        let dic = list[indexPath.row]
+        vc.title = dic["title"]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
