@@ -84,14 +84,23 @@ class GrammarTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = GrammarDetailViewController.instantiate() else {
-            return
-        }
+        
         let dic = list[indexPath.row]
-        vc.title = dic["title"] as? String
-        vc.urlS = dic["url"] as? String
-        vc.note = dic["note"] as? String
-        self.navigationController?.pushViewController(vc, animated: true)
+        let title = dic["title"] as? String
+        
+        if title?.range(of: "混编") != nil {
+            let ocVC = OCViewController.init()
+            self.navigationController?.pushViewController(ocVC, animated: true)
+        }
+        else {
+            guard let vc = GrammarDetailViewController.instantiate() else {
+                return
+            }
+            vc.title = title
+            vc.urlS = dic["url"] as? String
+            vc.note = dic["note"] as? String
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     

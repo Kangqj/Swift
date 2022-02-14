@@ -31,10 +31,15 @@
             "note":"1. as\n（1）从派生类转换为基类，向上转型（upcasts）\n（2）消除二义性，数值类型转换\n（3）switch 语句中进行模式匹配\n2. as!\n向下转型（Downcasting）时使用。由于是强制类型转换，如果转换失败会报 runtime 运行错误。\n3. as?\nas? 和 as! 操作符的转换规则完全一样。但 as? 如果转换不成功的时候便会返回一个 nil 对象。成功的话返回可选类型值。由于 as? 在转换失败的时候也不会出现错误，所以对于如果能确保100%会成功的转换则可使用 as!，否则使用 as?",
         },
         {
-            "title":"OC与Swift混编之桥接文件",
-            "detail":"转型，类型判断，消除二义性",
-            "url":"https://www.jianshu.com/p/7711a1ecc89d?from=timeline&isappinstalled=0",
+            "title":"OC与Swift混编",
+            "detail":"iOS Swift项目内OC文件，调用Swift类方法",
+            "url":"https://www.jianshu.com/p/8409b409380b",
             "note":"OC与Swift混编之桥接文件",
+        },{
+            "title":"让你的 Swift 代码更 Swift",
+            "detail":"代码风格",
+            "url":"https://juejin.cn/post/7028506186743808008",
+            "note":"让你的 Swift 代码更 Swift",
         },
         {
             "title":"Call can throw报错处理",

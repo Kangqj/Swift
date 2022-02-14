@@ -12,7 +12,8 @@
 		2E67538A27B5FA1D00FC5882 /* GrammarDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */; };
 		2E67538C27B63FF300FC5882 /* grammar_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E67538B27B63FF300FC5882 /* grammar_list.json */; };
 		2E67538E27B6432200FC5882 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67538D27B6432200FC5882 /* Extension.swift */; };
-		2E6C0EE527BA35790008CC23 /* OC1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C0EE427BA35790008CC23 /* OC1ViewController.m */; };
+		2E6C0EE527BA35790008CC23 /* OCViewController.h.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C0EE427BA35790008CC23 /* OCViewController.h.m */; };
+		2E6C0EE927BA410F0008CC23 /* SLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C0EE827BA410F0008CC23 /* SLabel.swift */; };
 		2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE427B4F60F009F7002 /* AppDelegate.swift */; };
 		2E7ACDE727B4F60F009F7002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE627B4F60F009F7002 /* SceneDelegate.swift */; };
 		2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE827B4F60F009F7002 /* ControlViewController.swift */; };
@@ -48,8 +49,9 @@
 		2E67538B27B63FF300FC5882 /* grammar_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammar_list.json; sourceTree = "<group>"; };
 		2E67538D27B6432200FC5882 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2E6C0EE227BA35790008CC23 /* Swift_Study-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_Study-Bridging-Header.h"; sourceTree = "<group>"; };
-		2E6C0EE327BA35790008CC23 /* OC1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OC1ViewController.h; sourceTree = "<group>"; };
-		2E6C0EE427BA35790008CC23 /* OC1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OC1ViewController.m; sourceTree = "<group>"; };
+		2E6C0EE327BA35790008CC23 /* OCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCViewController.h; sourceTree = "<group>"; };
+		2E6C0EE427BA35790008CC23 /* OCViewController.h.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCViewController.h.m; sourceTree = "<group>"; };
+		2E6C0EE827BA410F0008CC23 /* SLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLabel.swift; sourceTree = "<group>"; };
 		2E7ACDE127B4F60F009F7002 /* Swift_Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Study.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7ACDE427B4F60F009F7002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E7ACDE627B4F60F009F7002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,8 +123,9 @@
 				2E7ACDE827B4F60F009F7002 /* ControlViewController.swift */,
 				2E67538327B5F73500FC5882 /* GrammarTableViewController.swift */,
 				2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */,
-				2E6C0EE327BA35790008CC23 /* OC1ViewController.h */,
-				2E6C0EE427BA35790008CC23 /* OC1ViewController.m */,
+				2E6C0EE327BA35790008CC23 /* OCViewController.h */,
+				2E6C0EE427BA35790008CC23 /* OCViewController.h.m */,
+				2E6C0EE827BA410F0008CC23 /* SLabel.swift */,
 				2E67538D27B6432200FC5882 /* Extension.swift */,
 				2E67538B27B63FF300FC5882 /* grammar_list.json */,
 				2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */,
@@ -286,13 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E6C0EE527BA35790008CC23 /* OC1ViewController.m in Sources */,
+				2E6C0EE527BA35790008CC23 /* OCViewController.h.m in Sources */,
 				2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */,
 				2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */,
 				2E67538E27B6432200FC5882 /* Extension.swift in Sources */,
 				2E7ACE1C27B520A5009F7002 /* MainTableViewController.swift in Sources */,
 				2E7ACDE727B4F60F009F7002 /* SceneDelegate.swift in Sources */,
 				2E67538427B5F73500FC5882 /* GrammarTableViewController.swift in Sources */,
+				2E6C0EE927BA410F0008CC23 /* SLabel.swift in Sources */,
 				2E67538627B5F91100FC5882 /* GrammarDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,6 +46,23 @@ class GrammarDetailViewController: UIViewController {
 //        let url = URL(string: urlS!)!
 //        let request = URLRequest(url: url)
 //        mWebView.load(request)
+        
+        for subView in view.subviews {
+            if subView is WKWebView {
+                NSLog("is WKWebView %@", subView)
+            }
+            else {
+                NSLog("is not WKWebView")
+            }
+        }
+        
+        for case let wk as WKWebView in view.subviews {
+            NSLog("is WKWebView %@", wk)
+        }
+        
+        for wk in view.subviews where wk is WKWebView {
+            NSLog("is WKWebView %@", wk)
+        }
     }
     
     static func instantiate() ->GrammarDetailViewController?
