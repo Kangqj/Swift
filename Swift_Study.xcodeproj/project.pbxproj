@@ -12,6 +12,7 @@
 		2E67538A27B5FA1D00FC5882 /* GrammarDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */; };
 		2E67538C27B63FF300FC5882 /* grammar_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E67538B27B63FF300FC5882 /* grammar_list.json */; };
 		2E67538E27B6432200FC5882 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E67538D27B6432200FC5882 /* Extension.swift */; };
+		2E6C0EE527BA35790008CC23 /* OC1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C0EE427BA35790008CC23 /* OC1ViewController.m */; };
 		2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE427B4F60F009F7002 /* AppDelegate.swift */; };
 		2E7ACDE727B4F60F009F7002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE627B4F60F009F7002 /* SceneDelegate.swift */; };
 		2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACDE827B4F60F009F7002 /* ControlViewController.swift */; };
@@ -46,6 +47,9 @@
 		2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GrammarDetailViewController.storyboard; sourceTree = "<group>"; };
 		2E67538B27B63FF300FC5882 /* grammar_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammar_list.json; sourceTree = "<group>"; };
 		2E67538D27B6432200FC5882 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2E6C0EE227BA35790008CC23 /* Swift_Study-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swift_Study-Bridging-Header.h"; sourceTree = "<group>"; };
+		2E6C0EE327BA35790008CC23 /* OC1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OC1ViewController.h; sourceTree = "<group>"; };
+		2E6C0EE427BA35790008CC23 /* OC1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OC1ViewController.m; sourceTree = "<group>"; };
 		2E7ACDE127B4F60F009F7002 /* Swift_Study.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Study.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7ACDE427B4F60F009F7002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E7ACDE627B4F60F009F7002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				2E7ACDE827B4F60F009F7002 /* ControlViewController.swift */,
 				2E67538327B5F73500FC5882 /* GrammarTableViewController.swift */,
 				2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */,
+				2E6C0EE327BA35790008CC23 /* OC1ViewController.h */,
+				2E6C0EE427BA35790008CC23 /* OC1ViewController.m */,
 				2E67538D27B6432200FC5882 /* Extension.swift */,
 				2E67538B27B63FF300FC5882 /* grammar_list.json */,
 				2E67538927B5FA1D00FC5882 /* GrammarDetailViewController.storyboard */,
@@ -124,6 +130,7 @@
 				2E7ACDED27B4F611009F7002 /* Assets.xcassets */,
 				2E7ACDEF27B4F611009F7002 /* LaunchScreen.storyboard */,
 				2E7ACDF227B4F611009F7002 /* Info.plist */,
+				2E6C0EE227BA35790008CC23 /* Swift_Study-Bridging-Header.h */,
 			);
 			path = Swift_Study;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 				TargetAttributes = {
 					2E7ACDE027B4F60F009F7002 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 					2E7ACDF627B4F611009F7002 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -278,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E6C0EE527BA35790008CC23 /* OC1ViewController.m in Sources */,
 				2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */,
 				2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */,
 				2E67538E27B6432200FC5882 /* Extension.swift in Sources */,
@@ -460,6 +469,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Swift_Study/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,6 +478,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Swift-Study";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_Study/Swift_Study-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -478,6 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Swift_Study/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -486,6 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "aaa.Swift-Study";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swift_Study/Swift_Study-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

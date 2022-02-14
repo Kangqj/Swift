@@ -19,10 +19,22 @@
             "note":"guard 语句，类似于 if 语句，基于布尔值表达式来执行语句，使用 guard 语句来要求一个条件必须是真才能执行 guard 之后的，与 if 语句不通，guard语句总是有一个 else 分句 -- else 分句里得代码会在条件不为真的时候执行",
         },
         {
+            "title":"Swift的特殊关键字与符号",
+            "detail":"特殊语法",
+            "url":"https://www.cnblogs.com/MrTao/p/5178019.html",
+            "note":"Swift的特殊关键字与符号",
+        },
+        {
             "title":"as、as!、as? 三种操作符",
             "detail":"转型，类型判断，消除二义性",
             "url":"https://www.cnblogs.com/dukework/p/6553714.html",
             "note":"1. as\n（1）从派生类转换为基类，向上转型（upcasts）\n（2）消除二义性，数值类型转换\n（3）switch 语句中进行模式匹配\n2. as!\n向下转型（Downcasting）时使用。由于是强制类型转换，如果转换失败会报 runtime 运行错误。\n3. as?\nas? 和 as! 操作符的转换规则完全一样。但 as? 如果转换不成功的时候便会返回一个 nil 对象。成功的话返回可选类型值。由于 as? 在转换失败的时候也不会出现错误，所以对于如果能确保100%会成功的转换则可使用 as!，否则使用 as?",
+        },
+        {
+            "title":"OC与Swift混编之桥接文件",
+            "detail":"转型，类型判断，消除二义性",
+            "url":"https://www.jianshu.com/p/7711a1ecc89d?from=timeline&isappinstalled=0",
+            "note":"OC与Swift混编之桥接文件",
         },
         {
             "title":"Call can throw报错处理",
