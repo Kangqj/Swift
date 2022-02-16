@@ -6,5 +6,7 @@ target 'Swift_Study' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'HandyJSON'
+    pod 'AlamofireImage'
+    pod 'Moya'
 end
 

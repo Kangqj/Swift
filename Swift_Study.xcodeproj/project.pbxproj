@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		6119CAD327BBD910008FD407 /* SwiftGraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */; };
 		61798B7627BC975800FF9E92 /* SwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7527BC975800FF9E92 /* SwiftModel.swift */; };
 		61798B7827BCCA4700FF9E92 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7727BCCA4700FF9E92 /* NetworkViewController.swift */; };
+		61798B7A27BCFF0C00FF9E92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7927BCFF0C00FF9E92 /* NetworkManager.swift */; };
 		E47F4F77C4301CD4916F2DA9 /* Pods_Swift_Study.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6C65013347FA1F13502787 /* Pods_Swift_Study.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGraViewController.swift; sourceTree = "<group>"; };
 		61798B7527BC975800FF9E92 /* SwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftModel.swift; sourceTree = "<group>"; };
 		61798B7727BCCA4700FF9E92 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		61798B7927BCFF0C00FF9E92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8B6C65013347FA1F13502787 /* Pods_Swift_Study.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_Study.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E943FBD91BCA1D444C036490 /* Pods-Swift_Study.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Study.debug.xcconfig"; path = "Target Support Files/Pods-Swift_Study/Pods-Swift_Study.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */,
 				6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */,
 				61798B7727BCCA4700FF9E92 /* NetworkViewController.swift */,
+				61798B7927BCFF0C00FF9E92 /* NetworkManager.swift */,
 				61798B7527BC975800FF9E92 /* SwiftModel.swift */,
 				2E6C0EE327BA35790008CC23 /* OCViewController.h */,
 				2E6C0EE427BA35790008CC23 /* OCViewController.h.m */,
@@ -178,7 +181,6 @@
 				E943FBD91BCA1D444C036490 /* Pods-Swift_Study.debug.xcconfig */,
 				5DFDA4B61DB6918EF469B508 /* Pods-Swift_Study.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -370,6 +372,7 @@
 				2E6C0EE527BA35790008CC23 /* OCViewController.h.m in Sources */,
 				2E7ACDE927B4F60F009F7002 /* ControlViewController.swift in Sources */,
 				2E7ACDE527B4F60F009F7002 /* AppDelegate.swift in Sources */,
+				61798B7A27BCFF0C00FF9E92 /* NetworkManager.swift in Sources */,
 				2E67538E27B6432200FC5882 /* Extension.swift in Sources */,
 				2E7ACE1C27B520A5009F7002 /* MainTableViewController.swift in Sources */,
 				6119CAD327BBD910008FD407 /* SwiftGraViewController.swift in Sources */,

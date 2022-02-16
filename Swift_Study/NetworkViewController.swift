@@ -7,11 +7,15 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
+import Moya
 
 class NetworkViewController: UIViewController {
     
     var webURL : String?
     var remark : String?
+    var imageView: UIImageView?
+    let weatherUrl:String = "http://weatherapi.market.xiaomi.com/wtr-v2/temp/realtime?cityId=101040100"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +33,9 @@ class NetworkViewController: UIViewController {
         button.layer.cornerRadius = 10
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(networkRequest), for: .touchUpInside)
-        // Do any additional setup after loading the view.
+        
+        imageView = UIImageView(frame: CGRect(x: 30, y: 180, width: 200, height: 200))
+        self.view.addSubview(imageView!)
     }
     
     @objc func showInfo() {
@@ -42,15 +48,68 @@ class NetworkViewController: UIViewController {
         vc.note = remark
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     @objc func networkRequest() {
-        Alamofire.request("https://www.baidu.com", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-            if response.error == nil {
-                NSLog("请求成功\(String(describing: response.result.value))")
+        let url = URL(string: "https://pis.junsangs.com/api/bing/api.php")!
+        imageView?.af_setImage(withURL: url)
+        
+        //文档目录
+        let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString
+        //缓存目录
+        let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString
+        //临时目录
+        let tempPath = NSTemporaryDirectory() as NSString
+        NSLog("%@\n%@\n%@", documentPath, cachePath, tempPath)
+        
+        Alamofire.request("https://pis.junsangs.com/api/bing/api.php").response { response in
+
+            print(response)
+        }
+        
+//        getWeatherInfoByAlamofire()
+        getWeatherInfoByMoya()
+    }
+    
+    func getWeatherInfoByAlamofire() -> Void {
+            Alamofire.request(weatherUrl,method:.get,parameters:nil,encoding: URLEncoding.default).responseJSON { (response) in
+                switch response.result {
+                case .success(let json ):
+                    let jsonDic = json as? NSDictionary
+                    print(jsonDic! as NSDictionary);
+                    break
+                case .failure(let error):
+                    print("error:\(error)")
+                    break
+                }
             }
-            else {
-                NSLog("请求失败\(String(describing: response.error))")
+        }
+    
+    /// 基本使用
+    func getWeatherInfoByMoya() {
+        NetworkProvider.request(NetworkAPI.realtimeWeather(cityId: "101040100")) { result in
+            if case .success(let response) = result {
+               // 解析数据
+                let jsonDic = try! response.mapJSON() as! NSDictionary
+                self.showAlert(weatherDic: jsonDic)
             }
         }
     }
+
+    func showAlert(weatherDic:NSDictionary) -> Void {
+               let dataDic = weatherDic["weatherinfo"] as! NSDictionary
+               let temp = dataDic["temp"] as!String
+               let sd = dataDic["SD"] as!String
+               
+               
+               let alertController = UIAlertController(title:"提示",message:"重庆当前温度：\(temp)℃,湿度：\(sd)",preferredStyle: .alert);
+               let canceAction = UIAlertAction(title:"取消",style:.cancel,handler:nil);
+               let okAciton = UIAlertAction(title:"确定",style:.default,handler: {
+                   action in
+                   print("他点击了确定")
+               })
+               alertController.addAction(canceAction);
+               alertController.addAction(okAciton);
+               self.present(alertController, animated: true, completion: nil)
+           }
+
 }
