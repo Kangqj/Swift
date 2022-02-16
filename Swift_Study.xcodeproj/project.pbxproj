@@ -24,6 +24,7 @@
 		2E7ACE0727B4F611009F7002 /* Swift_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACE0627B4F611009F7002 /* Swift_StudyUITests.swift */; };
 		2E7ACE1C27B520A5009F7002 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACE1B27B520A5009F7002 /* MainTableViewController.swift */; };
 		6119CAD327BBD910008FD407 /* SwiftGraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */; };
+		61798B7627BC975800FF9E92 /* SwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7527BC975800FF9E92 /* SwiftModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		2E7ACE0827B4F611009F7002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E7ACE1B27B520A5009F7002 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGraViewController.swift; sourceTree = "<group>"; };
+		61798B7527BC975800FF9E92 /* SwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				2E67538327B5F73500FC5882 /* GrammarTableViewController.swift */,
 				2E67538527B5F91100FC5882 /* GrammarDetailViewController.swift */,
 				6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */,
+				61798B7527BC975800FF9E92 /* SwiftModel.swift */,
 				2E6C0EE327BA35790008CC23 /* OCViewController.h */,
 				2E6C0EE427BA35790008CC23 /* OCViewController.h.m */,
 				2E6C0EE827BA410F0008CC23 /* SLabel.swift */,
@@ -300,6 +303,7 @@
 				6119CAD327BBD910008FD407 /* SwiftGraViewController.swift in Sources */,
 				2E7ACDE727B4F60F009F7002 /* SceneDelegate.swift in Sources */,
 				2E67538427B5F73500FC5882 /* GrammarTableViewController.swift in Sources */,
+				61798B7627BC975800FF9E92 /* SwiftModel.swift in Sources */,
 				2E6C0EE927BA410F0008CC23 /* SLabel.swift in Sources */,
 				2E67538627B5F91100FC5882 /* GrammarDetailViewController.swift in Sources */,
 			);
