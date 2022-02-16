@@ -50,6 +50,11 @@
             "detail":"@objc",
             "url":"https://www.jianshu.com/p/b651126b1b1d",
             "note":"@objc",
+        },{
+            "title":"Swift: 网络请求三方库---Alamofire",
+            "detail":"@objc",
+            "url":"https://www.jianshu.com/p/c0c3d2b5f164?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation",
+            "note":"Alamofire",
         },
         {
             "title":"Call can throw报错处理",

@@ -25,7 +25,7 @@ class SwiftGraViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         let rightItem = UIBarButtonItem(title: "资料", style: .plain, target: self, action: #selector(showNote))
-        self.navigationItem.rightBarButtonItem = rightItem;
+        self.navigationItem.rightBarButtonItem = rightItem
         
         let button = UIButton(type: UIButton.ButtonType.system)
         button.frame = CGRect(x: 20, y: 100, width: 100, height: 40)

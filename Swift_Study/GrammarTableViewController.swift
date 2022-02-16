@@ -100,6 +100,13 @@ class GrammarTableViewController: UITableViewController {
             sVC.remark = dic["note"] as? String
             self.navigationController?.pushViewController(sVC, animated: true)
         }
+        else if title?.range(of: "Swift: 网络请求三方库---Alamofire") != nil {
+            let sVC = NetworkViewController.init()
+            sVC.title = title
+            sVC.webURL = dic["url"] as? String
+            sVC.remark = dic["note"] as? String
+            self.navigationController?.pushViewController(sVC, animated: true)
+        }
         else {
             guard let vc = GrammarDetailViewController.instantiate() else {
                 return
