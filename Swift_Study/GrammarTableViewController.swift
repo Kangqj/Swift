@@ -90,7 +90,15 @@ class GrammarTableViewController: UITableViewController {
         
         if title?.range(of: "混编") != nil {
             let ocVC = OCViewController.init()
+            ocVC.title = title
             self.navigationController?.pushViewController(ocVC, animated: true)
+        }
+        else if title?.range(of: "让你的 Swift 代码更 Swift") != nil {
+            let sVC = SwiftGraViewController.init()
+            sVC.title = title
+            sVC.webURL = dic["url"] as? String
+            sVC.remark = dic["note"] as? String
+            self.navigationController?.pushViewController(sVC, animated: true)
         }
         else {
             guard let vc = GrammarDetailViewController.instantiate() else {
