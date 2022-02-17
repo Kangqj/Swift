@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import Moya
+import NVActivityIndicatorView
 
 class NetworkViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class NetworkViewController: UIViewController {
     var imageView: UIImageView?
     var textView: UITextView?
     let weatherUrl:String = "http://weatherapi.market.xiaomi.com/wtr-v2/temp/realtime?cityId=101040100"
+    var activityIndicatorView: NVActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +71,12 @@ class NetworkViewController: UIViewController {
         textView?.layer.borderWidth = 0.5
         textView?.layer.borderColor = UIColor .gray.cgColor
         textView?.layer.cornerRadius = 10
+        
+        activityIndicatorView = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60), type: .ballSpinFadeLoader, color: .red, padding: 0)
+        activityIndicatorView?.center = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2)
+        self.view.addSubview(activityIndicatorView!)
+        activityIndicatorView?.startAnimating()
+        activityIndicatorView?.isHidden = true
     }
     
     @objc func showInfo() {
@@ -83,8 +91,8 @@ class NetworkViewController: UIViewController {
     }
     
     @objc func picRequest() {
-        let url = URL(string: "https://pis.junsangs.com/api/bing/api.php")!
-        imageView?.af_setImage(withURL: url)
+//        let url = URL(string: "https://pis.junsangs.com/api/bing/api.php")!
+//        imageView?.af_setImage(withURL: url)
         
         //文档目录
         let documentPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last! as NSString
@@ -94,9 +102,32 @@ class NetworkViewController: UIViewController {
         let tempPath = NSTemporaryDirectory() as NSString
         NSLog("%@\n%@\n%@", documentPath, cachePath, tempPath)
         
-        Alamofire.request("https://pis.junsangs.com/api/bing/api.php").response { response in
-            let jsonDic = response as? [String:Any]
-            self.textView?.text = jsonDic?.toJsonString()
+//        Alamofire.request("https://pis.junsangs.com/api/bing/api.php").response { response in
+//            let jsonDic = response as? [String:Any]
+//            self.textView?.text = jsonDic?.toJsonString()
+//        }
+        activityIndicatorView?.isHidden = false
+        NetworkProvider.request(NetworkAPI.getNetworkPicture) { result in
+            self.activityIndicatorView?.isHidden = true
+            
+            if case .success(let response) = result {
+                
+                let data:Data = response.data
+                self.imageView?.image = UIImage(data: data)
+                
+                let timeStamp:TimeInterval = NSDate().timeIntervalSince1970
+                let time:String = "\(timeStamp)" as String
+                let path = documentPath.appendingFormat("/%@.png", time)
+                do {
+                    try data.write(to: URL(fileURLWithPath: path as String))
+                }
+                catch {
+                    NSLog("写入失败!!!")
+                }
+                
+                let json = try? response.mapJSON() as? [String: Any]
+                self.textView?.text = json?.toJsonString()
+            }
         }
     }
     
@@ -117,7 +148,9 @@ class NetworkViewController: UIViewController {
     
     /// 基本使用
     @objc func getWeatherInfoByMoya() {
+        activityIndicatorView?.isHidden = false
         NetworkProvider.request(NetworkAPI.realtimeWeather(cityId: "101040100")) { result in
+            self.activityIndicatorView?.isHidden = true
             if case .success(let response) = result {
                // 解析数据
                 let jsonDic = try? response.mapJSON() as? [String:Any]
@@ -143,9 +176,10 @@ class NetworkViewController: UIViewController {
    }
     
     @objc func poetryRequest() {
-        
         guard let token = UserDefaults.standard.string(forKey: "token") else {
+                activityIndicatorView?.isHidden = false
             NetworkProvider.request(NetworkAPI.getPoetryToken) { result in
+                self.activityIndicatorView?.isHidden = true
                 if case .success(let response) = result {
                     let jsonDic = try? response.mapJSON() as? [String:Any]
                     self.textView?.text = jsonDic?.toJsonString()
@@ -165,7 +199,9 @@ class NetworkViewController: UIViewController {
             return
         }
         
+                activityIndicatorView?.isHidden = false
         NetworkProvider.request(NetworkAPI.getPoetryDetail(token: p_tk)) { result in
+            self.activityIndicatorView?.isHidden = true
             if case .success(let response) = result {
                 let jsonDic = try? response.mapJSON() as? [String:Any]
                 self.textView?.text = jsonDic?.toJsonString()

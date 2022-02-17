@@ -9,7 +9,6 @@ import Foundation
 import Moya
 import HandyJSON
 
-
 // NetworkAPI就是一个遵循TargetType协议的枚举
 let NetworkProvider = MoyaProvider<NetworkAPI>()
 
@@ -18,6 +17,7 @@ enum NetworkAPI {
     case realtimeWeather(cityId:String)
     case getPoetryToken
     case getPoetryDetail(token:String)
+    case getNetworkPicture
 }
 
 extension NetworkAPI:TargetType{
@@ -29,6 +29,8 @@ extension NetworkAPI:TargetType{
             return URL(string: "https://v2.jinrishici.com/token")!
         case .getPoetryDetail:
             return URL(string: "https://v2.jinrishici.com/one.json")!
+        case .getNetworkPicture:
+            return URL(string: "https://pis.junsangs.com/api/bing/api.php")!
         }
     }
     
@@ -38,6 +40,7 @@ extension NetworkAPI:TargetType{
         case .realtimeWeather: return ""
         case .getPoetryToken: return ""
         case .getPoetryDetail: return ""
+        case .getNetworkPicture: return ""
         }
     }
     
@@ -57,6 +60,8 @@ extension NetworkAPI:TargetType{
             return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
         case .getPoetryDetail(let token):
             parmeters = ["X-User-Token":token] as [String : Any]
+            return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
+        case .getNetworkPicture:
             return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
         }
     }
