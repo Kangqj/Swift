@@ -24,6 +24,7 @@
 		2E7ACE0727B4F611009F7002 /* Swift_StudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACE0627B4F611009F7002 /* Swift_StudyUITests.swift */; };
 		2E7ACE1C27B520A5009F7002 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ACE1B27B520A5009F7002 /* MainTableViewController.swift */; };
 		6119CAD327BBD910008FD407 /* SwiftGraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */; };
+		61551AE027BE439F00A10420 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61551ADF27BE439F00A10420 /* NetworkModel.swift */; };
 		61798B7627BC975800FF9E92 /* SwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7527BC975800FF9E92 /* SwiftModel.swift */; };
 		61798B7827BCCA4700FF9E92 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7727BCCA4700FF9E92 /* NetworkViewController.swift */; };
 		61798B7A27BCFF0C00FF9E92 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61798B7927BCFF0C00FF9E92 /* NetworkManager.swift */; };
@@ -74,6 +75,7 @@
 		2E7ACE1B27B520A5009F7002 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5DFDA4B61DB6918EF469B508 /* Pods-Swift_Study.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_Study.release.xcconfig"; path = "Target Support Files/Pods-Swift_Study/Pods-Swift_Study.release.xcconfig"; sourceTree = "<group>"; };
 		6119CAD227BBD910008FD407 /* SwiftGraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGraViewController.swift; sourceTree = "<group>"; };
+		61551ADF27BE439F00A10420 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		61798B7527BC975800FF9E92 /* SwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftModel.swift; sourceTree = "<group>"; };
 		61798B7727BCCA4700FF9E92 /* NetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		61798B7927BCFF0C00FF9E92 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				61798B7727BCCA4700FF9E92 /* NetworkViewController.swift */,
 				61798B7927BCFF0C00FF9E92 /* NetworkManager.swift */,
 				61798B7527BC975800FF9E92 /* SwiftModel.swift */,
+				61551ADF27BE439F00A10420 /* NetworkModel.swift */,
 				2E6C0EE327BA35790008CC23 /* OCViewController.h */,
 				2E6C0EE427BA35790008CC23 /* OCViewController.h.m */,
 				2E6C0EE827BA410F0008CC23 /* SLabel.swift */,
@@ -381,6 +384,7 @@
 				2E67538427B5F73500FC5882 /* GrammarTableViewController.swift in Sources */,
 				61798B7627BC975800FF9E92 /* SwiftModel.swift in Sources */,
 				2E6C0EE927BA410F0008CC23 /* SLabel.swift in Sources */,
+				61551AE027BE439F00A10420 /* NetworkModel.swift in Sources */,
 				2E67538627B5F91100FC5882 /* GrammarDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

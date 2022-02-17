@@ -30,7 +30,7 @@ extension NetworkAPI:TargetType{
         case .getPoetryDetail:
             return URL(string: "https://v2.jinrishici.com/one.json")!
         case .getNetworkPicture:
-            return URL(string: "https://pis.junsangs.com/api/bing/api.php")!
+            return NetworkModel.init().getRandomUrl()
         }
     }
     
