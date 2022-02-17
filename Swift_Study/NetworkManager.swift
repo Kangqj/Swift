@@ -16,6 +16,8 @@ let NetworkProvider = MoyaProvider<NetworkAPI>()
 enum NetworkAPI {
     // 实时天气
     case realtimeWeather(cityId:String)
+    case getPoetryToken
+    case getPoetryDetail(token:String)
 }
 
 extension NetworkAPI:TargetType{
@@ -23,6 +25,10 @@ extension NetworkAPI:TargetType{
         switch self {
         case .realtimeWeather:
             return URL(string: "http://weatherapi.market.xiaomi.com/wtr-v2/temp/realtime?cityId=101040100")!
+        case .getPoetryToken:
+            return URL(string: "https://v2.jinrishici.com/token")!
+        case .getPoetryDetail:
+            return URL(string: "https://v2.jinrishici.com/one.json")!
         }
     }
     
@@ -30,6 +36,8 @@ extension NetworkAPI:TargetType{
     var path: String {
         switch self {
         case .realtimeWeather: return ""
+        case .getPoetryToken: return ""
+        case .getPoetryDetail: return ""
         }
     }
     
@@ -42,9 +50,13 @@ extension NetworkAPI:TargetType{
     public var task: Task {
         var parmeters: [String : Any] = [:]
         switch self {
-
         case .realtimeWeather(let cityId):
             parmeters = ["cityId":cityId] as [String : Any]
+            return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
+        case .getPoetryToken:
+            return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
+        case .getPoetryDetail(let token):
+            parmeters = ["X-User-Token":token] as [String : Any]
             return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
         }
     }
