@@ -21,8 +21,10 @@ class MainTableViewController: UITableViewController {
         
         let dict1 = ["title":"UI学习", "detial":"学习各种控件的使用"];
         let dict2 = ["title":"Swift语法学习", "detial":"学习Swift语法的使用"];
+        let dict3 = ["title":"iCloud学习", "detial":"学习iCloud的使用"];
         list.append(dict1)
         list.append(dict2)
+        list.append(dict3)
     }
     
 //    var list = ["UI学习","语法学习","item3","item4","item5","item6"]
@@ -57,7 +59,7 @@ class MainTableViewController: UITableViewController {
             vc.title = dic["title"];
             self.navigationController?.pushViewController(vc, animated: true);
         case 1:
-            let vc = GrammarTableViewController();
+            let vc = iCloudViewController.init();
             vc.title = dic["title"];
             self.navigationController?.pushViewController(vc, animated: true);
         default:
